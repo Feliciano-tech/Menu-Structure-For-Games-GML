@@ -15,40 +15,6 @@ global.key_down   = vk_down;
 
 
 //-----------------------------------------------------------
-//Enumeração das Paginas do Menu
-//-----------------------------------------------------------
-
-enum menu_page {
-    main,        // 0  - Página principal
-    newGame,     // 1  - Criar novo jogo
-    settings,    // 2  - Configurações
-    audio,       // 3  - Áudio
-    difficulty,  // 4  - Dificuldade
-    graphics,    // 5  - Gráficos
-    controls,    // 6  - Controles
-    exitGame,    // 7  - Fecha o jogo
-    returnMenu,  // 8  - Retorna ao Menu Principal
-    save,        // 9  - Salva o Progresso Atual
-    load,        // 10 - Carrega o Ultimo Progresso Salvo
-    height       // 11 - Contagem total (não é uma página real)
-    
-     
-}
-
-//-----------------------------------------------------------
-//Enumeração dos Tipos de Elementos do Menu
-//-----------------------------------------------------------
-
-enum menu_element_type {
-	script_runner, // Executa uma função/script
-    page_transfer, // Troca de página
-    slider,        // Barra deslizante (0 a 1, volume etc.)
-    shift,         // Escolha múltipla (ex: dificuldade)
-    toggle,        // Liga/desliga
-    input          // Reatribuir tecla
-}
-
-//-----------------------------------------------------------
 //Criação do Menu
 //-----------------------------------------------------------
 
@@ -63,13 +29,13 @@ ds_menu_main = create_menu_page(
 );
 
 //Pagina Menu de Pause
-ds_resume_game = create_menu_page(
+ds_pause_game = create_menu_page(
     
     ["RESUME"       , menu_element_type.script_runner  , resume_game          ],
     ["SAVE"         , menu_element_type.script_runner  , save_game            ],
     ["LOAD GAME"    , menu_element_type.script_runner  , load_game            ],
     ["SETTINGS"     , menu_element_type.page_transfer  , menu_page.settings   ],
-    ["RETURN MENU"  , menu_element_type.page_transfer  , menu_page.returnMenu ],
+    ["RETURN MENU"  , menu_element_type.page_transfer  , menu_page.main       ],
     ["EXIT"         , menu_element_type.script_runner  , exit_game            ]
 );
 
@@ -115,21 +81,19 @@ ds_menu_controls = create_menu_page(
     ["BACK"         , menu_element_type.page_transfer, menu_page.settings]
 );
 
-// Página inicial do menu
-page = 0
+global.page_map = array_create(menu_page.height);
+
+global.page_map[menu_page.main]       = ds_menu_main;
+global.page_map[menu_page.settings]   = ds_settings;
+global.page_map[menu_page.pause]      = ds_pause_game;
+global.page_map[menu_page.audio]      = ds_menu_audio;
+global.page_map[menu_page.difficulty] = ds_menu_difficulty;
+global.page_map[menu_page.graphics]   = ds_menu_graphics;
+global.page_map[menu_page.controls]   = ds_menu_controls;
+
+global.menu_start_page = menu_page.main;
 
 
-// Guarda todas as páginas em um array
-menu_pages = [
-    
-    ds_menu_main,
-    ds_resume_game,
-    ds_settings,
-    ds_menu_audio,
-    ds_menu_difficulty,
-    ds_menu_graphics,
-    ds_menu_controls
-];
 
 /*
 show_debug_message("-----------------------------------quantidade de paginas total-----------------------------------");

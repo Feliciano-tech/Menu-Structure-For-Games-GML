@@ -1,3 +1,3 @@
-function Script6(){
+function resume_game(){
 
 }

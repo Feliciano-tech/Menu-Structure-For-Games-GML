@@ -35,6 +35,7 @@
   },
   "name":"Space-shot-Beta",
   "resources":[
+    {"id":{"name":"fnt_consolas","path":"fonts/fnt_consolas/fnt_consolas.yy",},},
     {"id":{"name":"obj_menu_controller","path":"objects/obj_menu_controller/obj_menu_controller.yy",},},
     {"id":{"name":"obj_menu_data","path":"objects/obj_menu_data/obj_menu_data.yy",},},
     {"id":{"name":"Menu","path":"rooms/Menu/Menu.yy",},},
@@ -45,6 +46,7 @@
     {"id":{"name":"create_menu_page","path":"scripts/create_menu_page/create_menu_page.yy",},},
     {"id":{"name":"exit_game","path":"scripts/exit_game/exit_game.yy",},},
     {"id":{"name":"load_game","path":"scripts/load_game/load_game.yy",},},
+    {"id":{"name":"menu_enums","path":"scripts/menu_enums/menu_enums.yy",},},
     {"id":{"name":"resume_game","path":"scripts/resume_game/resume_game.yy",},},
     {"id":{"name":"save_game","path":"scripts/save_game/save_game.yy",},},
     {"id":{"name":"start_newgame","path":"scripts/start_newgame/start_newgame.yy",},},
