@@ -40,7 +40,7 @@ var spacing = 36;
 
 
 // pulso do selecionado (tempo)
-var pulse = sel_scale_base + sin(current_time / 150) * sel_scale_pulse;
+//var pulse = sel_scale_base + sin(current_time / 150) * sel_scale_pulse;
 
 // Calcula o pulso do zoom baseado no tempo
 // sin cria o efeito de "respiração"
@@ -77,7 +77,7 @@ for (var r = 0; r < ds_grid_height(page_grid); r++) {
     //var show_txt = (r == selected) ? ("> " + txt) : txt;
     var show_txt = (r == selected) ? (txt) : txt;
 
-      // Se o item estiver em foco, desenha um highlight atrás
+     /* // Se o item estiver em foco, desenha um highlight atrás
     if (focus > 0) {
         draw_set_alpha(0.22 * focus); // transparência suave
         draw_set_color(c_white);
@@ -93,7 +93,7 @@ for (var r = 0; r < ds_grid_height(page_grid); r++) {
         // Restaura alpha e cor
         draw_set_alpha(1);
         draw_set_color(col);
-    }
+    }*/
 
         // Desenha o texto com escala (zoom)
     draw_text_transformed(

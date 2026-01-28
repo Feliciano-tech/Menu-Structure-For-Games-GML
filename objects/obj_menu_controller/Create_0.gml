@@ -51,8 +51,8 @@ sel_scale_base = 1.15;
 
 // Intensidade do efeito de pulsar
 // Quanto maior, mais perceptível o "respirar"
-sel_scale_pulse = 0.06;
+sel_scale_pulse = 0;//0.06;
 
 // Altura visual de cada item do menu
 // Usado para centralizar o destaque (highlight)
-menu_item_h = 36;
+//menu_item_h = 36;
